@@ -1,7 +1,7 @@
 "use client";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { Menu, MenuIcon } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import {
     Drawer,
     DrawerClose,
@@ -15,13 +15,17 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-export default function MainMenu() {
+type MobileMenuProps = {
+    direction: "left" | "top" | "right" | "bottom";
+};
+
+export default function MobileMenu({ direction }: MobileMenuProps) {
     const isDesktop = useMediaQuery("(min-width: 768px)");
     return isDesktop ? (
-        <div>desktop</div>
+        <div>Try to resize your screen to less then 768px</div>
     ) : (
         <div>
-            <Drawer direction="top">
+            <Drawer direction={direction}>
                 <DrawerTrigger>
                     <MenuIcon />
                 </DrawerTrigger>
