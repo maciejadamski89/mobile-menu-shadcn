@@ -35,7 +35,9 @@ export default function MobileMenu({ direction, radius }: MobileMenuProps) {
                 <DrawerTrigger>
                     <MenuIcon />
                 </DrawerTrigger>
-                <DrawerContent className={`bg-white ${radius ? `${radiusClasses[direction][radius]}` : ""}`}>
+                <DrawerContent
+                    className={`bg-white ${radius ? `${radiusClasses[direction][radius]}` : "rounded-none"}`}
+                >
                     <DrawerHeader>
                         <DrawerTitle>Are you absolutely sure?</DrawerTitle>
                         <DrawerDescription>This action cannot be undone.</DrawerDescription>
