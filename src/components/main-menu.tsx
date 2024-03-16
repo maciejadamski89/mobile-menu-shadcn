@@ -1,5 +1,4 @@
 "use client";
-
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { MenuIcon } from "lucide-react";
 import {
@@ -12,14 +11,21 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-
 import { Button } from "@/components/ui/button";
 
 type MobileMenuProps = {
     direction: "left" | "top" | "right" | "bottom";
+    radius?: "sm" | "md" | "lg";
 };
 
-export default function MobileMenu({ direction }: MobileMenuProps) {
+const radiusClasses = {
+    left: { sm: "rounded-r-xl", md: "rounded-r-2xl", lg: "rounded-r-3xl" },
+    right: { sm: "rounded-l-xl", md: "rounded-l-2xl", lg: "rounded-l-3xl" },
+    top: { sm: "rounded-b-xl", md: "rounded-b-2xl", lg: "rounded-b-3xl" },
+    bottom: { sm: "rounded-t-xl", md: "rounded-t-2xl", lg: "rounded-t-3xl" },
+};
+
+export default function MobileMenu({ direction, radius }: MobileMenuProps) {
     const isDesktop = useMediaQuery("(min-width: 768px)");
     return isDesktop ? (
         <div>Try to resize your screen to less then 768px</div>
@@ -29,7 +35,7 @@ export default function MobileMenu({ direction }: MobileMenuProps) {
                 <DrawerTrigger>
                     <MenuIcon />
                 </DrawerTrigger>
-                <DrawerContent className="bg-white">
+                <DrawerContent className={`bg-white ${radius ? `${radiusClasses[direction][radius]}` : ""}`}>
                     <DrawerHeader>
                         <DrawerTitle>Are you absolutely sure?</DrawerTitle>
                         <DrawerDescription>This action cannot be undone.</DrawerDescription>

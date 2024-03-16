@@ -19,6 +19,7 @@ export default function Home() {
                     <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
                         shadcn drawer component
                     </a>
+                    with different directions.
                 </TableCaption>
                 <TableHeader>
                     <TableRow>
@@ -49,6 +50,47 @@ export default function Home() {
                         <TableCell className="font-medium">Bottom</TableCell>
                         <TableCell>
                             <MainMenu direction="bottom" />
+                        </TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+            <Table>
+                <TableCaption>
+                    Mobile menus build using{" "}
+                    <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
+                        shadcn drawer component
+                    </a>
+                    with different radius.
+                </TableCaption>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[100px] font-bold">Radius</TableHead>
+                        <TableHead></TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TableRow>
+                        <TableCell className="font-medium">none</TableCell>
+                        <TableCell>
+                            <MainMenu direction="right" />
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="font-medium">sm</TableCell>
+                        <TableCell>
+                            <MainMenu direction="right" radius="sm" />
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="font-medium">md</TableCell>
+                        <TableCell>
+                            <MainMenu direction="right" radius="md" />
+                        </TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell className="font-medium">lg</TableCell>
+                        <TableCell>
+                            <MainMenu direction="right" radius="lg" />
                         </TableCell>
                     </TableRow>
                 </TableBody>
