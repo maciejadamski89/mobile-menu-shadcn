@@ -1,6 +1,5 @@
 "use client";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { MenuIcon } from "lucide-react";
 import {
     Drawer,
     DrawerClose,
@@ -12,6 +11,7 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
+import MenuIcon from "./menu-icon";
 
 type MobileMenuProps = {
     direction: "left" | "top" | "right" | "bottom";
