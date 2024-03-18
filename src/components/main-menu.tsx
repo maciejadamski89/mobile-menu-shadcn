@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import MenuIcon from "./menu-icon";
+import CloseIcon from "./close-icon";
 
 type MobileMenuProps = {
     direction: "left" | "top" | "right" | "bottom";
@@ -38,16 +39,12 @@ export default function MobileMenu({ direction, radius }: MobileMenuProps) {
                 <DrawerContent
                     className={`bg-white ${radius ? `${radiusClasses[direction][radius]}` : "rounded-none"}`}
                 >
-                    <DrawerHeader>
-                        <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                        <DrawerDescription>This action cannot be undone.</DrawerDescription>
-                    </DrawerHeader>
-                    <DrawerFooter>
-                        <Button>Submit</Button>
+                    <DrawerHeader className="flex justify-between items-center">
+                        <DrawerTitle>Brand</DrawerTitle>
                         <DrawerClose>
-                            <Button variant="outline">Cancel</Button>
+                            <CloseIcon />
                         </DrawerClose>
-                    </DrawerFooter>
+                    </DrawerHeader>
                 </DrawerContent>
             </Drawer>
         </div>
