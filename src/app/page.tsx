@@ -23,12 +23,6 @@ export default function Home() {
                         </a>
                         with different directions.
                     </TableCaption>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead className="w-[100px] font-bold">Direction</TableHead>
-                            <TableHead></TableHead>
-                        </TableRow>
-                    </TableHeader>
                     <TableBody>
                         <TableRow>
                             <TableCell className="font-medium">Right</TableCell>
@@ -67,12 +61,6 @@ export default function Home() {
                         </a>
                         with different radius.
                     </TableCaption>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead className="w-[100px] font-bold">Radius</TableHead>
-                            <TableHead></TableHead>
-                        </TableRow>
-                    </TableHeader>
                     <TableBody>
                         <TableRow>
                             <TableCell className="font-medium">none</TableCell>
@@ -122,6 +110,44 @@ export default function Home() {
                         Material Design v3 guide.
                     </a>
                 </p>
+            </div>
+            <div className="w-full mt-4">
+                <h2 className="text-xl font-semibold">Themes</h2>
+                <Table>
+                    <TableCaption>
+                        Mobile menus build using{" "}
+                        <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
+                            shadcn drawer component
+                        </a>
+                        with different radius.
+                    </TableCaption>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell className="font-medium">none</TableCell>
+                            <TableCell>
+                                <MainMenu direction="right" />
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell className="font-medium">sm</TableCell>
+                            <TableCell>
+                                <MainMenu direction="right" radius="sm" />
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell className="font-medium">md</TableCell>
+                            <TableCell>
+                                <MainMenu direction="right" radius="md" />
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell className="font-medium">lg</TableCell>
+                            <TableCell>
+                                <MainMenu direction="right" radius="lg" />
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
             </div>
         </main>
     );
