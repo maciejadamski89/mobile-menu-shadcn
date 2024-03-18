@@ -106,14 +106,20 @@ export default function Home() {
                 <p className="text-base font-normal">
                     The menu icon is represented by the <code className="font-semibold bg-gray-200">MenuIcon</code>{" "}
                     component. This component can be replaced with any other SVG-JSX icon to change the appearance of
-                    the menu icon. The <code className="font-semibold bg-gray-200">MenuIcon</code> component is wrapped
-                    by a <code className="font-semibold bg-gray-200">ClickableArea</code> component, which increases the
+                    the menu icon. By default{" "}
+                    <a href="https://heroicons.com/" className="underline">
+                        Heroicons
+                    </a>{" "}
+                    is used to render the menu icon but it can be easly replaced by custom SVG. Check{" "}
+                    <code className="font-semibold bg-gray-200">MenuIcon</code> component implementation. The{" "}
+                    <code className="font-semibold bg-gray-200">MenuIcon</code> component is wrapped by a{" "}
+                    <code className="font-semibold bg-gray-200">ClickableArea</code> component, which increases the
                     clickable area around the icon, making it easier for users to interact with the menu based on{" "}
                     <a
                         href="https://m3.material.io/foundations/accessible-design/accessibility-basics"
                         className="underline"
                     >
-                        Material Design v3 guide
+                        Material Design v3 guide.
                     </a>
                 </p>
             </div>
