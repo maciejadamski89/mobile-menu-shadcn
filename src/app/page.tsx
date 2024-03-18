@@ -1,4 +1,7 @@
-import MainMenu from "@/components/main-menu";
+import MobileMenuBackDropBlur from "@/components/mobile-menu-backdrop-blur";
+import MobileMenuBig from "@/components/mobile-menu-big";
+import MobileMenuClassic from "@/components/mobile-menu-classic";
+import MobileMenuCore from "@/components/mobile-menu-core";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function Home() {
@@ -27,25 +30,25 @@ export default function Home() {
                         <TableRow>
                             <TableCell className="font-medium">Right</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" />
+                                <MobileMenuCore direction="right" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">Left</TableCell>
                             <TableCell>
-                                <MainMenu direction="left" />
+                                <MobileMenuCore direction="left" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">Top</TableCell>
                             <TableCell>
-                                <MainMenu direction="top" />
+                                <MobileMenuCore direction="top" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">Bottom</TableCell>
                             <TableCell>
-                                <MainMenu direction="bottom" />
+                                <MobileMenuCore direction="bottom" />
                             </TableCell>
                         </TableRow>
                     </TableBody>
@@ -65,25 +68,25 @@ export default function Home() {
                         <TableRow>
                             <TableCell className="font-medium">none</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" />
+                                <MobileMenuCore direction="right" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">sm</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" radius="sm" />
+                                <MobileMenuCore direction="right" radius="sm" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">md</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" radius="md" />
+                                <MobileMenuCore direction="right" radius="md" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell className="font-medium">lg</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" radius="lg" />
+                                <MobileMenuCore direction="right" radius="lg" />
                             </TableCell>
                         </TableRow>
                     </TableBody>
@@ -91,7 +94,7 @@ export default function Home() {
             </div>
             <div className="w-full mt-4">
                 <h2 className="text-xl font-semibold">Icon</h2>
-                <p className="text-base font-normal">
+                <p className="text-base font-normal mt-2">
                     The menu icon is represented by the <code className="font-semibold bg-gray-200">MenuIcon</code>{" "}
                     component. This component can be replaced with any other SVG-JSX icon to change the appearance of
                     the menu icon. By default{" "}
@@ -112,7 +115,16 @@ export default function Home() {
                 </p>
             </div>
             <div className="w-full mt-4">
-                <h2 className="text-xl font-semibold">Themes</h2>
+                <h2 className="text-xl font-semibold">Overlay</h2>
+                <p className="text-base font-normal mt-2">
+                    The <code className="font-semibold bg-gray-200">overlay</code> prop can be used to apply different
+                    overlay effects to the drawer. It accepts two values:{" "}
+                    <code className="font-semibold bg-gray-200">overlay</code> and{" "}
+                    <code className="font-semibold bg-gray-200">blur</code>. When{" "}
+                    <code className="font-semibold bg-gray-200">overlay</code> is used, a semi-transparent black overlay
+                    is applied to the drawer. When <code className="font-semibold bg-gray-200">blur</code> is used, a
+                    blur effect is applied to the drawer, and a border is added to the drawer.
+                </p>
                 <Table>
                     <TableCaption>
                         Mobile menus build using{" "}
@@ -123,27 +135,50 @@ export default function Home() {
                     </TableCaption>
                     <TableBody>
                         <TableRow>
-                            <TableCell className="font-medium">none</TableCell>
+                            <TableCell className="font-medium">classic</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" />
+                                <MobileMenuClassic direction="right" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell className="font-medium">sm</TableCell>
+                            <TableCell className="font-medium">blur</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" radius="sm" />
+                                <MobileMenuBackDropBlur direction="right" />
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </div>
+            <div className="w-full mt-4">
+                <h2 className="text-xl font-semibold">Themes</h2>
+                <p className="text-base font-normal mt-2">
+                    The <code className="font-semibold bg-gray-200">overlay</code> prop can be used to apply different
+                    overlay effects to the drawer. It accepts two values:{" "}
+                    <code className="font-semibold bg-gray-200">overlay</code> and{" "}
+                    <code className="font-semibold bg-gray-200">blur</code>. When{" "}
+                    <code className="font-semibold bg-gray-200">overlay</code> is used, a semi-transparent black overlay
+                    is applied to the drawer. When <code className="font-semibold bg-gray-200">blur</code> is used, a
+                    blur effect is applied to the drawer, and a border is added to the drawer.
+                </p>
+                <Table>
+                    <TableCaption>
+                        Mobile menus build using{" "}
+                        <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
+                            shadcn drawer component
+                        </a>
+                        with different radius.
+                    </TableCaption>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell className="font-medium">classic</TableCell>
+                            <TableCell>
+                                <MobileMenuClassic direction="right" />
                             </TableCell>
                         </TableRow>
                         <TableRow>
-                            <TableCell className="font-medium">md</TableCell>
+                            <TableCell className="font-medium">big</TableCell>
                             <TableCell>
-                                <MainMenu direction="right" radius="md" />
-                            </TableCell>
-                        </TableRow>
-                        <TableRow>
-                            <TableCell className="font-medium">lg</TableCell>
-                            <TableCell>
-                                <MainMenu direction="right" radius="lg" />
+                                <MobileMenuBig direction="right" radius="sm" />
                             </TableCell>
                         </TableRow>
                     </TableBody>
