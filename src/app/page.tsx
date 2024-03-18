@@ -10,10 +10,11 @@ export default function Home() {
             <div className="w-full space-y-2">
                 <h1 className="font-bold text-2xl">Mobile Menu Snippets</h1>
                 <p className="text-base font-normal">
-                    This project showcases various mobile menu snippets built using the shadcn drawer component. The
-                    drawer component can be configured to slide out from different directions, providing a versatile
-                    solution for mobile navigation. The table below lists the different menu directions along with a
-                    corresponding icon. Click on an icon to see the menu in action.
+                    This project showcases various mobile menu snippets built using{" "}
+                    <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
+                        the shadcn drawer component
+                    </a>
+                    .
                 </p>
             </div>
             <div className="w-full mt-4">
@@ -150,7 +151,7 @@ export default function Home() {
                         <TableRow>
                             <TableCell className="font-medium">big</TableCell>
                             <TableCell>
-                                <MobileMenuBig direction="right" radius="sm" />
+                                <MobileMenuBig direction="right" />
                             </TableCell>
                         </TableRow>
                     </TableBody>
