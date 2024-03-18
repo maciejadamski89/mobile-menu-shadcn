@@ -19,13 +19,6 @@ export default function Home() {
             <div className="w-full mt-4">
                 <h2 className="text-xl font-bold">Direction</h2>
                 <Table>
-                    <TableCaption>
-                        Mobile menus build using{" "}
-                        <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
-                            shadcn drawer component
-                        </a>
-                        with different directions.
-                    </TableCaption>
                     <TableBody>
                         <TableRow>
                             <TableCell className="font-medium">Right</TableCell>
@@ -57,13 +50,6 @@ export default function Home() {
             <div className="w-full mt-4">
                 <h2 className="text-xl font-bold">Radius</h2>
                 <Table>
-                    <TableCaption>
-                        Mobile menus build using{" "}
-                        <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
-                            shadcn drawer component
-                        </a>
-                        with different radius.
-                    </TableCaption>
                     <TableBody>
                         <TableRow>
                             <TableCell className="font-medium">none</TableCell>
@@ -126,13 +112,6 @@ export default function Home() {
                     blur effect is applied to the drawer, and a border is added to the drawer.
                 </p>
                 <Table>
-                    <TableCaption>
-                        Mobile menus build using{" "}
-                        <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
-                            shadcn drawer component
-                        </a>
-                        with different radius.
-                    </TableCaption>
                     <TableBody>
                         <TableRow>
                             <TableCell className="font-medium">classic</TableCell>
@@ -161,13 +140,6 @@ export default function Home() {
                     blur effect is applied to the drawer, and a border is added to the drawer.
                 </p>
                 <Table>
-                    <TableCaption>
-                        Mobile menus build using{" "}
-                        <a href="https://ui.shadcn.com/docs/components/drawer" className="underline">
-                            shadcn drawer component
-                        </a>
-                        with different radius.
-                    </TableCaption>
                     <TableBody>
                         <TableRow>
                             <TableCell className="font-medium">classic</TableCell>
