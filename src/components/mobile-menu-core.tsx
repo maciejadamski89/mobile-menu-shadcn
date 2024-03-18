@@ -1,16 +1,6 @@
 "use client";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Button } from "@/components/ui/button";
+import { Drawer, DrawerClose, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import MenuIcon from "./menu-icon";
 import CloseIcon from "./close-icon";
 
@@ -26,7 +16,7 @@ const radiusClasses = {
     bottom: { sm: "rounded-t-xl", md: "rounded-t-2xl", lg: "rounded-t-3xl" },
 };
 
-export default function MobileMenu({ direction, radius }: MobileMenuProps) {
+export default function MobileMenuCore({ direction, radius }: MobileMenuProps) {
     const isDesktop = useMediaQuery("(min-width: 768px)");
     return isDesktop ? (
         <div>Try to resize your screen to less then 768px</div>
