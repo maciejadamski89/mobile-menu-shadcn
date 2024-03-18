@@ -7,9 +7,9 @@ import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, Tabl
 export default function Home() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-16 max-w-xl mx-auto gap-y-4">
-            <div className="w-full">
-                <h1 className="font-bold text-2xl mb-2">Mobile Menu Snippets</h1>
-                <p>
+            <div className="w-full space-y-2">
+                <h1 className="font-bold text-2xl">Mobile Menu Snippets</h1>
+                <p className="text-base font-normal">
                     This project showcases various mobile menu snippets built using the shadcn drawer component. The
                     drawer component can be configured to slide out from different directions, providing a versatile
                     solution for mobile navigation. The table below lists the different menu directions along with a
@@ -78,9 +78,9 @@ export default function Home() {
                     </TableBody>
                 </Table>
             </div>
-            <div className="w-full mt-4">
+            <div className="w-full mt-4 space-y-2">
                 <h2 className="text-xl font-semibold">Icon</h2>
-                <p className="text-base font-normal mt-2">
+                <p className="text-base font-normal">
                     The menu icon is represented by the <code className="font-semibold bg-gray-200">MenuIcon</code>{" "}
                     component. This component can be replaced with any other SVG-JSX icon to change the appearance of
                     the menu icon. By default{" "}
@@ -100,9 +100,9 @@ export default function Home() {
                     </a>
                 </p>
             </div>
-            <div className="w-full mt-4">
+            <div className="w-full mt-4 space-y-2">
                 <h2 className="text-xl font-semibold">Overlay</h2>
-                <p className="text-base font-normal mt-2">
+                <p className="text-base font-normal">
                     The <code className="font-semibold bg-gray-200">overlay</code> prop can be used to apply different
                     overlay effects to the drawer. It accepts two values:{" "}
                     <code className="font-semibold bg-gray-200">overlay</code> and{" "}
@@ -128,9 +128,9 @@ export default function Home() {
                     </TableBody>
                 </Table>
             </div>
-            <div className="w-full mt-4">
+            <div className="w-full mt-4 space-y-2">
                 <h2 className="text-xl font-semibold">Themes</h2>
-                <p className="text-base font-normal mt-2">
+                <p className="text-base font-normal">
                     The <code className="font-semibold bg-gray-200">overlay</code> prop can be used to apply different
                     overlay effects to the drawer. It accepts two values:{" "}
                     <code className="font-semibold bg-gray-200">overlay</code> and{" "}
