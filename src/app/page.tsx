@@ -115,7 +115,7 @@ export default function Home() {
                 <Table>
                     <TableBody>
                         <TableRow>
-                            <TableCell className="font-medium">classic</TableCell>
+                            <TableCell className="font-medium">dark overlay</TableCell>
                             <TableCell>
                                 <MobileMenuClassic direction="right" />
                             </TableCell>
