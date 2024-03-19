@@ -23,43 +23,64 @@ const DrawerPortal = DrawerPrimitive.Portal;
 
 const DrawerClose = DrawerPrimitive.Close;
 
-const DrawerOverlay = React.forwardRef<
-    React.ElementRef<typeof DrawerPrimitive.Overlay>,
-    React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
->(({ className, ...props }, ref) => (
-    <DrawerPrimitive.Overlay ref={ref} className={cn("fixed inset-0 z-50 bg-black/80", className)} {...props} />
-));
+type OverlayType = "overlay" | "blur";
+
+interface DrawerOverlayProps extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay> {
+    overlay?: OverlayType;
+}
+
+const DrawerOverlay = React.forwardRef<React.ElementRef<typeof DrawerPrimitive.Overlay>, DrawerOverlayProps>(
+    ({ className, overlay = "overlay", ...props }, ref) => (
+        <DrawerPrimitive.Overlay
+            ref={ref}
+            className={cn(
+                "fixed inset-0 z-50",
+                {
+                    "bg-black/80": overlay === "overlay",
+                    "backdrop-blur-sm": overlay === "blur",
+                },
+                className
+            )}
+            {...props}
+        />
+    )
+);
+
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
-const DrawerContent = React.forwardRef<
-    React.ElementRef<typeof DrawerPrimitive.Content>,
-    React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => {
-    const { direction } = React.useContext(DrawerContext);
-    return (
-        <DrawerPortal>
-            <DrawerOverlay />
-            <DrawerPrimitive.Content
-                ref={ref}
-                className={cn(
-                    "fixed  z-50 flex h-auto flex-col border bg-background",
-                    (!direction || direction === "bottom") && "inset-x-0 bottom-0 mt-24",
-                    direction === "right" && "top-0 right-0 w-screen max-w-80 h-full",
-                    direction === "left" && "top-0 left-0 w-screen max-w-80 h-full",
-                    direction === "top" && "inset-x-0 top-0 mb-24",
-                    className
-                )}
-                {...props}
-            >
-                {!direction ||
-                    (direction === "bottom" && (
-                        <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-neutral-100" />
-                    ))}
-                {children}
-            </DrawerPrimitive.Content>
-        </DrawerPortal>
-    );
-});
+interface DrawerContentProps extends React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content> {
+    overlay?: OverlayType;
+}
+
+const DrawerContent = React.forwardRef<React.ElementRef<typeof DrawerPrimitive.Content>, DrawerContentProps>(
+    ({ className, children, overlay = "overlay", ...props }, ref) => {
+        const { direction } = React.useContext(DrawerContext);
+        return (
+            <DrawerPortal>
+                <DrawerOverlay overlay={overlay} />
+                <DrawerPrimitive.Content
+                    ref={ref}
+                    className={cn(
+                        "fixed z-50 flex h-auto flex-col bg-background",
+                        overlay === "blur" && "border",
+                        (!direction || direction === "bottom") && "inset-x-0 bottom-0 mt-24",
+                        direction === "right" && "top-0 right-0 w-screen max-w-80 h-full",
+                        direction === "left" && "top-0 left-0 w-screen max-w-80 h-full",
+                        direction === "top" && "inset-x-0 top-0 mb-24",
+                        className
+                    )}
+                    {...props}
+                >
+                    {!direction ||
+                        (direction === "bottom" && (
+                            <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-neutral-100" />
+                        ))}
+                    {children}
+                </DrawerPrimitive.Content>
+            </DrawerPortal>
+        );
+    }
+);
 DrawerContent.displayName = "DrawerContent";
 
 const DrawerHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
